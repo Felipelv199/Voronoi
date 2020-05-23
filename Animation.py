@@ -53,11 +53,8 @@ circles = generateCircles(points, radius)
 delta = math.sqrt((radius * radius) + (radius * radius))
 
 pg.init()
-
 screen = pg.display.set_mode((1000, 720))
-
 pg.display.set_caption('Graphics')
-
 animationTimer = pg.time.Clock()
 endProgram = False
 edges_points = []

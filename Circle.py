@@ -23,16 +23,14 @@ class Circle:
         return self.name
 
     def intersections(self, other):
-        d = math.sqrt(math.pow((other.origin.x-self.origin.x),2) + math.pow((other.origin.y-self.origin.y),2))
+        d = math.sqrt(math.pow((other.origin.x-self.origin.x), 2) + math.pow((other.origin.y-self.origin.y), 2))
         if d > self.radius + other.radius:
-            # print("Circles are separate")
             return None
         if d < math.fabs(self.radius - other.radius):
-            # print("Circle is contained within the other")
             return None
-        if d == 0.0 and self.radius == other.radius:
-            # print("Circles are coincident")
+        if d == 0 and self.radius == other.radius:
             return None
+
         a = (math.pow(self.radius, 2) - math.pow(other.radius, 2) + math.pow(d, 2)) / (2*d)
         h = math.sqrt(math.pow(self.radius, 2) - math.pow(a, 2))
 
